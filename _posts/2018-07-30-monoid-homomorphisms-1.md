@@ -9,7 +9,7 @@ categories:
 
 Haskell community in particular and the functional programming community in general adopted a lot of useful algebraic structures, such as semigroups,monoids, (linear) orders, monads, categories etc. However, in the vast majority of the cases, this adoption has been at the level of of individual objects as opposed to adopting the category they form. People talk about monoids, however you do not hear many programmers talking about the *category* of monoids, for instance. Similarly, you do not see many type class instances which use an assumption that a certain map is actually a morphism in some category. One notable exception is Kmett's monad homomorphism library, which treats monads as a category.
 
-From an ex-mathematicians point of view, most functional programmers learning category theory seem to have blind spot there. There is this whole genre of categories where objects are *sets with extra structure* and morphisms are *structure preserving functions*. For the working programmer, a category usually consists of types and functions you can define between them. The extra structure part is completely lost. A function is merely a way to get from type a to type b. It is not seen as a means to carry or translate structure.
+From an ex-mathematicians point of view, most functional programmers learning category theory seem to have a blind spot there. There is this whole genre of categories where objects are *sets with extra structure* and morphisms are *structure preserving functions*. For the working programmer, a category usually consists of types and functions you can define between them. The extra structure part is completely lost. A function is merely a way to get from type a to type b. It is not seen as a means to carry or translate structure.
 
 This is not a big loss, of course, because most of the time the category at at hand *does* consist of types in a programming language and functions you can define between them. However, I think, the *morphisms preserve structure* approach has its use cases.
 
@@ -64,8 +64,8 @@ M \times 1 & \ras{\;\;\rho\;\;} & M \newline
 and
 \\[
 \begin{array}{c}
-(M \times M) \times M & \ras{\alpha}\;\;\;\; M \times (M\times M)\;\;\;\; \ras{\star} & M \times M \newline
-\da{\star} & & \da{\star} \newline
+(M \times M) \times M & \ras{\alpha}\;\;\;\; M \times (M\times M)\;\;\;\; \ras{\id \times \star} & M \times M \newline
+\da{\star \times \id} & & \da{\star} \newline
 M \times M & \ras{\;\;\;\;\;\;\;\;\;\;\;\;\;\;\star\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;} & M. \newline
 \end{array}
 \\]
